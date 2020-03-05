@@ -15,6 +15,12 @@ app.use(parserMiddleWare);
 const userRouter = require("./User/router");
 app.use(userRouter);
 
+const videosRouter = require("./Videos/router");
+app.use(videosRouter);
+
+const quotesRouter = require("./Quotes/router");
+app.use(quotesRouter);
+
 app.listen(port, () => {
   console.log(`LISTENING ON PORT ${port}`);
 });
