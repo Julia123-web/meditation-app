@@ -6,7 +6,7 @@ const Videos = sequelize.define("videos", {
   title: {
     type: Sequelize.TEXT
   },
-  video: {
+  videos: {
     type: Sequelize.STRING
   }
 });
