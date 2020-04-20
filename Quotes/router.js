@@ -4,19 +4,20 @@ const Quotes = require("./model");
 
 const router = new Router();
 
-router.get("/quotes", async function(request, response, next) {
+router.get("/quotes", async function (request, response, next) {
   try {
+    response.header("Access-Control-Allow-Origin", "*");
     const quotes = await Quotes.findAll();
     response.send(quotes);
   } catch (error) {
     next(error);
   }
 
-  router.post("/quotes", async function(request, response, next) {
+  router.post("/quotes", async function (request, response, next) {
     try {
       // console.log("TEST2", request.body);
       const newQuote = await Quotes.create({
-        quotes: request.body.quotes
+        quotes: request.body.quotes,
       });
       console.log("TEST2", newQuote);
       response.send(newQuote);
